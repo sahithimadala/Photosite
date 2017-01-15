@@ -1,0 +1,23 @@
+<h1>Photo Site User List</h1>
+<body>
+<font size="5">There are 6 users</font>
+<br>
+<br>
+<table>
+  <tr>
+    <th><font size="4">USER</font></th>
+    <th><font size="4">FIRST NAME</font></th>
+    <th><font size="4">LAST NAME</font></th>
+
+  </tr>
+  <% for user in @user %>
+  <tr>
+    <td><font size="4"><%= user.id %></font></td>
+    <td><font size="4"><%= link_to user.first_name, {:action=> "index", :controller => "photos", :id =>user.id} %> </font></td>
+    <td><font size="4"><%= user.last_name %></font></td>
+
+  </tr>
+      <% end %>
+</table>
+
+</body>
